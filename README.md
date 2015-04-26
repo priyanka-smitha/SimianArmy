@@ -1,28 +1,62 @@
-## DESCRIPTION
+SPECIAL MILESTONE  - CSC591 DevOps
+-------------------------------
 
-The Simian Army is a suite of tools for keeping your cloud operating in top form.  Chaos Monkey, the first member, is a resiliency tool that
-helps ensure that your applications can tolerate random instance failures
+Project Team Members:
 
-## CloudBees build status
-[![Build Status](https://netflixoss.ci.cloudbees.com/job/SimianArmy-master/badge/icon)](https://netflixoss.ci.cloudbees.com/job/SimianArmy-master/)
+1] Priyanka Shankaran (priyan)
 
-## DETAILS
+2] Smitha Sathyanarayana (ssathya)
 
-Please see the [wiki](https://github.com/Netflix/SimianArmy/wiki).
+### Description
+-------------------------------
 
-## SUPPORT
+For our special milestone, we are introducing resilience testing through the **Chaos Monkey**.We are using the **Netfilx** vesrion of Chaos Monkey and configuring the code to suit our application needs.
 
-[Simian Army Google group](http://groups.google.com/group/simianarmy-users).
+1] Chaos Monkey brings down EC2 instances randomly. To make our application resilient to such attacks we are creating auto scaling groups with a load balancer using Amazon Web Services(AWS).
 
-## LICENSE
+2] To create auto scaling groups we first create a launch configuration with the AWS Management Console. This is the configuration with which the EC2 instances are created automatically.
 
-Copyright 2012 Netflix, Inc.
+![screenshots](spl/lc.PNG)
 
-Licensed under the Apache License, Version 2.0 (the “License”); you may not use this file except in
-compliance with the License. You may obtain a copy of the License at
+3] We are creating Auto Scaling Groups(ASG) to rescale the architecture whenever Chaos Monkey brings a server down. In the below screenshot we can see that we are making sure that 2 instances are always up for our project.
 
-http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software distributed under the License is
-distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-implied. See the License for the specific language governing permissions and limitations under the
-License.
+![screenshots](spl/asg.PNG)
+
+4] As soon as we configure Auto Scaling Groups we see that two EC2 are created atomatically as seen in the screenshot below:
+
+![screenshots](spl/ec2.png)
+
+5] A load balancer is also created so that traffic is routed to healthy EC2 instances whenever one server is terminated by Chaos Monkey. 
+
+![screenshots](spl/lb.PNG)
+
+6] The chaos monkey code propert files are configured so taht chaos monkey attacks our Auto Scaling Group created above. The screenshot below shows that one EC2 instance has been chosen randomly and terminated.
+
+![screenshots](spl/simian.png)
+
+7] On the AWS managemnt console we can check that one instance is done. The load balancer screenshots below depict the same i.e one instance is down.
+
+![screenshots](spl/check.PNG)
+
+![screenshots](spl/check2.PNG)
+
+8] Using the public domain address of the load balancer we can see that no disruption has been observed in the application.
+
+![screenshots](spl/browser.PNG)
+
+9] Chaos monkey is configured only once per day and hence if we try to run it again in the same day we get a message as shown below:
+
+![screenshots](spl/deletion done.PNG)
+
+10] As soon as one instance is terminated, the auto scaling group creates another EC2 instance automatically. We can setup notifications and deploy our application to the new instance. Thus using an auto scaled,load balanced application resiliency is introduced in our infrastructure.
+
+The video demoing our DevOps pipeline can be found here: https://www.youtube.com/watch?v=dIYWab_QRLo&feature=youtu.be&hd=1
+
+
+
+
+
+
+
+
+
