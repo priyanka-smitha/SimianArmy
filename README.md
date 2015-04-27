@@ -22,7 +22,7 @@ For our special milestone, we are introducing resilience testing through the **C
 
 ![screenshots](spl/asg.PNG)
 
-4] As soon as we configure Auto Scaling Groups we see that two EC2 are created atomatically as seen in the screenshot below:
+4] As soon as we configure Auto Scaling Groups we see that two EC2 are created automatically as seen in the screenshot below:
 
 ![screenshots](spl/ec2.png)
 
@@ -30,17 +30,17 @@ For our special milestone, we are introducing resilience testing through the **C
 
 ![screenshots](spl/lb.PNG)
 
-6] The chaos monkey code propert files are configured so taht chaos monkey attacks our Auto Scaling Group created above. The screenshot below shows that one EC2 instance has been chosen randomly and terminated.
+6] The chaos monkey code property files are configured so that chaos monkey attacks the Auto Scaling Group created above. The screenshot below shows that one EC2 instance has been chosen randomly and terminated.
 
 ![screenshots](spl/simian.png)
 
-7] On the AWS managemnt console we can check that one instance is done. The load balancer screenshots below depict the same i.e one instance is down.
+7] On the AWS management console we can check that one instance is done. The load balancer screenshots below depict the same i.e one instance is down.
 
 ![screenshots](spl/check.PNG)
 
 ![screenshots](spl/check2.PNG)
 
-8] Using the public domain address of the load balancer we can see that no disruption has been observed in the application.
+8] Using the public domain of the load balancer we can see that no disruption has been observed in the application.
 
 ![screenshots](spl/browser.PNG)
 
