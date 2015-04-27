@@ -10,7 +10,7 @@ Project Team Members:
 ### Description
 -------------------------------
 
-For our special milestone, we are introducing resilience testing through the **Chaos Monkey**.We are using the **Netfilx** vesrion of Chaos Monkey and configuring the code to suit our application needs.
+For our special milestone, we are introducing resilience testing through the **Chaos Monkey**.We are using the **Netfilx** version of Chaos Monkey and configuring the code to suit our application needs.
 
 1] Chaos Monkey brings down EC2 instances randomly. To make our application resilient to such attacks we are creating auto scaling groups with a load balancer using Amazon Web Services(AWS).
 
@@ -30,11 +30,11 @@ For our special milestone, we are introducing resilience testing through the **C
 
 ![screenshots](spl/lb.PNG)
 
-6] The chaos monkey code property files are configured so that chaos monkey attacks the Auto Scaling Group created above. The screenshot below shows that one EC2 instance has been chosen randomly and terminated.
+6] The chaos monkey property files are configured so that chaos monkey attacks the Auto Scaling Group created above. The screenshot below shows that one EC2 instance has been chosen randomly and terminated.
 
 ![screenshots](spl/simian.png)
 
-7] On the AWS management console we can check that one instance is done. The load balancer screenshots below depict the same i.e one instance is down.
+7] On the AWS management console we can check that one instance is down. The load balancer screenshots below depict the same i.e one instance is down.
 
 ![screenshots](spl/check.PNG)
 
@@ -44,19 +44,10 @@ For our special milestone, we are introducing resilience testing through the **C
 
 ![screenshots](spl/browser.PNG)
 
-9] Chaos monkey is configured only once per day and hence if we try to run it again in the same day we get a message as shown below:
+9] Chaos monkey is configured to run only once per day and hence if we try to run it again in the same day we get a message as shown below:
 
 ![screenshots](spl/deletion done.PNG)
 
 10] As soon as one instance is terminated, the auto scaling group creates another EC2 instance automatically. We can setup notifications and deploy our application to the new instance. Thus using an auto scaled,load balanced application resiliency is introduced in our infrastructure.
 
 The video demoing our DevOps pipeline can be found here: https://www.youtube.com/watch?v=dIYWab_QRLo&feature=youtu.be&hd=1
-
-
-
-
-
-
-
-
-
